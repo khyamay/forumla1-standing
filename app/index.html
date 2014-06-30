@@ -11,17 +11,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/app.css"/>
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body ng-controller="driversCtrl">
+  <input type="text" ng-model="nameFilter" placeholder="Search..." />
   <table>
     <thead>
       <tr>
         <th colspan="4">Drivers Championship Standings</th>
       </tr>
       <tbody>
-        <tr ng-repeat="driver in driversList">
+        <tr ng-repeat="driver in driversList | filter: nameFilter">
           <td>
 <!--             <img src="img/flags/{{driver.Driver.nationality}}.png" />
  -->            {{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
