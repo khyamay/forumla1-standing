@@ -1,22 +1,22 @@
-<section id="main">
+<div class="container-fluid">
+<section class="row">
 	<a href="./#/drivers"><- Back to Drivers Lists</a>
-	<nav id="secondary" class="main-nav">
-		<div class="driver-picture">
-			<div class="avatar">
-				<img ng-show="driver" src="img/drivers/{{driver.Driver.driverId}}.png">
-				<img ng-show="driver" src="img/flags/{{driver.Driver.nationality}}.png">
+	<nav class="col-md-4"> 
+		<div class="row">
+			<div>
+				<img class="img-thumbnail" ng-show="driver" src="img/drivers/{{driver.Driver.driverId}}.png">
 				{{driver.Driver.givenName}} {{driver.Driver.familyName}}
 			</div>
 		</div>
-	<div class="dirver-status">
+	<div>
 		Country: {{driver.Driver.nationality}} <br/>
 		Team: {{driver.Constructors[0].name}} <br/>
 		Birth: {{driver.Driver.dateOfBirth}}<br/>
 		<a href="{{driver.Driver.url}}"> Biography</a>
 	</div>
 </nav>
-<div class="main-content">
-	<table class="result-table">
+<div class="col-md-8">
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th colspan="5"> Formula 1 2013 Results</th>
@@ -41,3 +41,4 @@
 	</table>
 </div>
 </section>
+</div>
