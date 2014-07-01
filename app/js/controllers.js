@@ -24,10 +24,11 @@ angular.module('F1FeederApp.controllers', [])
   	$scope.races = [];
   	$scope.driver = null;
 
-  	ergastAPIService.getDriverDetails($scope.id)
-  		.success(function (resposne){
-  			$scope.driver = response.MRData.StandingsTable.StandingsLists[0].DriverStandings[0];
-  		});
+  	ergastAPIService.getDriversDetails($scope.id)
+  		.success(function (response){
+		$scope.driver = response.MRData.StandingsTable.StandingsLists[0].DriverStandings[0];   		
+
+	});
 
   	ergastAPIService.getDriverRaces($scope.id)
   		.success(function (response){
